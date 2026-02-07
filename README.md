@@ -26,11 +26,11 @@ https://firecoder29.github.io/Benchmark-Intl.-School/
   - Chief Executive Officer
 - Image gallery showing school visuals
 
-<p align="centre">
+<p align="center">
   <img src="Screenshot 2026-02-07 174826.png" width="500">
 </p>
 
-<p align="centre">
+<p align="center">
   <img src="Screenshot 2026-02-07 174858.png" width="500">
 </p>
 
