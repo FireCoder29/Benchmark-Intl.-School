@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Submitted</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f9;
+            overflow: hidden;
+        }
+
+        /* colorful falling papers */
+        .paper {
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            border-radius: 3px;
+            opacity: 0.9;
+            animation: fall linear infinite;
+        }
+
+        .paper:nth-child(1) {
+            left: 10%;
+            background: #ff6b6b;
+            animation-duration: 6s;
+        }
+
+        .paper:nth-child(2) {
+            left: 20%;
+            background: #feca57;
+            animation-duration: 7s;
+        }
+
+        .paper:nth-child(3) {
+            left: 30%;
+            background: #48dbfb;
+            animation-duration: 8s;
+        }
+
+        .paper:nth-child(4) {
+            left: 40%;
+            background: #1dd1a1;
+            animation-duration: 6.5s;
+        }
+
+        .paper:nth-child(5) {
+            left: 55%;
+            background: #5f27cd;
+            animation-duration: 9s;
+        }
+
+        .paper:nth-child(6) {
+            left: 70%;
+            background: #ff9ff3;
+            animation-duration: 7.5s;
+        }
+
+        .paper:nth-child(7) {
+            left: 85%;
+            background: #54a0ff;
+            animation-duration: 8.5s;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container-box {
+            position: relative;
+            z-index: 2;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 550px;
+            width: 90%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #0d6efd;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon {
+            font-size: 50px;
+            color: #0d6efd;
+            animation: pop 0.5s ease;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .congrats {
+            font-size: 22px;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 10px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        h2 {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .btn-home {
+            margin-top: 25px;
+            padding: 10px 25px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- colorful papers -->
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+    <div class="paper"></div>
+
+
+    <div class="container-box">
+
+        <div class="icon">✔</div>
+
+        <div class="congrats">🎉 Congratulations! 🎉</div>
+
+        <h2>Student Admission Application Submitted</h2>
+
+        <p>
+            Your application has been successfully received by the school authority. It will be reviewed carefully by
+            the admission committee.
+        </p>
+
+        <p>
+            If your application is shortlisted, you will be contacted through the provided contact information.
+        </p>
+
+        <a href="index.html" class="btn btn-primary btn-home">Return to Home</a>
+
+        <div class="note">
+            Please keep your contact number active for further communication.
+        </div>
+
+    </div>
+
+</body>
+
+</html>
