@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Admission Form</title>
+    <title>Student Admission Application</title>
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -85,6 +85,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            font-weight: bold;
             transition: background 0.3s;
         }
 
@@ -108,9 +109,10 @@
 
     <div class="form-container">
         <center>
-            <img src="images/mm-removebg-preview.png" class="img-fluid banner-img" width="80%">
+            <img src="images/mm-removebg-preview.png" class="img-fluid banner-img" width="80%" alt="School Logo">
         </center>
         <h2>Student Admission Application</h2>
+
         <form action="/submit-admission" method="POST">
 
             <fieldset>
@@ -125,6 +127,7 @@
                         <input type="text" id="last_name" name="last_name" required>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div>
                         <label for="dob">Date of Birth *</label>
@@ -140,12 +143,21 @@
                         </select>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="full-width">
-                        <label for="grade">Grade Applying For *</label>
+                        <label for="birth_cert">Birth Certificate Number *</label>
+                        <input type="number" id="birth_cert" name="birth_cert"
+                            placeholder="Enter numbers only. No words will be accepted." required
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="grade">Grade *</label>
                         <select id="grade" name="grade" required>
                             <option value="">Select Grade</option>
-                            <option value="k">Kindergarten</option>
                             <option value="1">Grade 1</option>
                             <option value="2">Grade 2</option>
                             <option value="3">Grade 3</option>
@@ -157,31 +169,56 @@
                             <option value="9">Grade 9</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <div class="full-width">
-                            <label for="vm">Section *</label>
-                            <select id="vm" name="vm" required>
-                                <option value="">Select Section</option>
-                                <option value="english">English Version</option>
-                                <option value="bangla">Bangla Medium</option>
-                            </select>
-                        </div>
+                    <div>
+                        <label for="section">Section *</label>
+                        <select id="section" name="section" required>
+                            <option value="">Select Section</option>
+                            <option value="english">English Version</option>
+                            <option value="bangla">Bangla Medium</option>
+                        </select>
+                    </div>
+                </div>
             </fieldset>
 
             <fieldset>
-                <legend>Parent/Guardian Details</legend>
+                <legend>Parents Information</legend>
                 <div class="form-group">
                     <div>
-                        <label for="parent_name">Full Name *</label>
-                        <input type="text" id="parent_name" name="parent_name" required>
+                        <label for="father_name">Father's Name *</label>
+                        <input type="text" id="father_name" name="father_name" required>
                     </div>
                     <div>
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+                        <label for="f_phone">Father's Phone Number *</label>
+                        <input type="tel" id="f_phone" name="f_phone" required pattern="[0-9]{11}" minlength="11"
+                            maxlength="11" title="Please enter exactly 11 digits"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="e.g. 017XXXXXXXX">
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="full-width">
+                        <label for="f_occ">Father's Occupation</label>
+                        <input type="text" id="f_occ" name="f_occ">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="mother_name">Mother's Name *</label>
+                        <input type="text" id="mother_name" name="mother_name" required>
+                    </div>
+                    <div>
+                        <label for="m_phone">Mother's Phone Number *</label>
+                        <input type="tel" id="m_phone" name="m_phone" required pattern="[0-9]{11}" minlength="11"
+                            maxlength="11" title="Please enter exactly 11 digits"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="e.g. 017XXXXXXXX">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="m_occ">Mother's Occupation</label>
+                        <input type="text" id="m_occ" name="m_occ">
+                    </div>
+                    <div>
                         <label for="email">Email Address *</label>
                         <input type="email" id="email" name="email" required>
                     </div>
@@ -198,8 +235,9 @@
                 </div>
                 <div class="form-group">
                     <div class="full-width">
-                        <label for="medical">Medical Conditions / Allergies (If any)</label>
-                        <textarea id="medical" name="medical" rows="2"></textarea>
+                        <label for="medical">Medical Report / Allergies (If any)</label>
+                        <textarea id="medical" name="medical" rows="2"
+                            placeholder="Describe any medical conditions..."></textarea>
                     </div>
                 </div>
             </fieldset>
@@ -210,10 +248,11 @@
         </form>
     </div>
 
-        <script>
+    <script>
         document.querySelector("form").addEventListener("submit", function (e) {
-            e.preventDefault(); // stop actual form submission
-            window.location.href = "Confirmation.html"; // go to success page
+            // Remove e.preventDefault() if you want the form to actually send to your server
+            e.preventDefault();
+            window.location.href = "Confirmation.html";
         });
     </script>
 
