@@ -113,7 +113,7 @@
         </center>
         <h2>Student Admission Application</h2>
 
-        <form action="/submit-admission" method="POST">
+        <form id="admissionForm">
 
             <fieldset>
                 <legend>Student Information</legend>
@@ -148,7 +148,7 @@
                     <div class="full-width">
                         <label for="birth_cert">Birth Certificate Number *</label>
                         <input type="number" id="birth_cert" name="birth_cert"
-                            placeholder="Enter numbers only. No words will be accepted." required
+                            placeholder="Please enter numbers only." required
                             oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                     </div>
                 </div>
@@ -220,7 +220,7 @@
                     </div>
                     <div>
                         <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required placeholder="">
                     </div>
                 </div>
             </fieldset>
@@ -243,16 +243,36 @@
             </fieldset>
 
             <div style="text-align: center; margin-top: 20px;">
-                <button type="submit">Submit Application</button>
+                <button type="submit" id="submitBtn">Submit Application</button>
             </div>
         </form>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
     <script>
-        document.querySelector("form").addEventListener("submit", function (e) {
-            // Remove e.preventDefault() if you want the form to actually send to your server
+        (function () {
+            // PUBLIC KEY
+            emailjs.init("Qy1FDf6pxRh-mYnK6");
+        })();
+
+        document.getElementById("admissionForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            window.location.href = "Confirmation.html";
+
+            const btn = document.getElementById("submitBtn");
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+
+            //  SERVICE ID AND TEMPLATE ID
+            emailjs.sendForm("service_6le2wyp", "template_q5j6pp5", this)
+                .then(function () {
+                    alert("Application Sent Successfully!");
+                    window.location.href = "Confirmation.html";
+                }, function (error) {
+                    alert("Failed to send: " + JSON.stringify(error));
+                    btn.innerText = "Submit Application";
+                    btn.disabled = false;
+                });
         });
     </script>
 
