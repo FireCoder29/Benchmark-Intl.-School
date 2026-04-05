@@ -15,6 +15,8 @@
     <style>
         body {
             background-color: #d9e4f0;
+            margin: 0;
+            padding: 0;
         }
 
         .custom-header {
@@ -77,7 +79,13 @@
 
         footer {
             margin-top: 50px;
+        }
+
+        /* ✅ ONLY ADDED THIS FOR FULL WIDTH */
+        .full-footer {
+            width: 100%;
             margin: 0;
+            padding: 0;
         }
     </style>
 
@@ -330,7 +338,6 @@
 
             </section>
 
-
             <!-- LATEST NOTICE -->
 
             <section class="container mt-5">
@@ -364,8 +371,6 @@
                 </div>
 
             </section>
-            ```
-
 
             <!-- MANAGEMENT -->
 
@@ -421,9 +426,9 @@
 
             <!-- FOOTER -->
 
-            <footer class="bg-dark text-center text-white">
+            <footer class="bg-dark text-center text-white" style="width:100%;">
 
-                <div class="container p-4">
+                <div class="container-fluid p-4">
 
                     <a class="btn btn-outline-light btn-floating m-1"
                         href="https://www.facebook.com/benchmarkinternationalschool">
@@ -446,7 +451,10 @@
 
                 <div class="text-center p-3" style="background:rgba(0,0,0,0.2);">
 
-                    © 2026 Copyright: <a href="index.html">BenchmarkIntlSchool.com</a>
+                    © 2026 Copyright:
+                    <a href="index.html" class="text-white text-decoration-none">
+                        Benchmark-Intl.-School.com
+                    </a>
 
                 </div>
 
