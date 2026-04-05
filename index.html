@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Benchmark International School</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,23 +26,16 @@
             white-space: nowrap;
         }
 
-        .carousel-item {
-            height: 380px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #eee;
-        }
-
-        .carousel-item img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
         .banner-img {
             max-height: 150px;
+            /* Responsive width logic */
             width: 85%;
+        }
+
+        @media (max-width: 768px) {
+            .banner-img {
+                width: 95%;
+            }
         }
 
         .section-title {
@@ -64,401 +55,240 @@
             transform: translateY(-5px);
         }
 
-        .notice-box {
-            background: #f8f9fa;
-            padding: 20px;
+        .logo-card-container {
+            background: #f6f7f8;
+            width: 220px;
+            padding: 25px;
             border-radius: 10px;
+            box-shadow: 0 4px 15px #d9e4f0;
+            margin-bottom: 20px;
         }
 
-        .admission-card {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            border: none;
-            padding: 30px;
+        /* Responsive adjustment for the floating logo */
+        @media (max-width: 991px) {
+            .logo-card-container {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .admission-box-custom {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 60px 50px;
+            box-shadow: 0 10px 30px #b3d0ee;
+        }
+
+        /* Reduce padding on mobile for better fit */
+        @media (max-width: 576px) {
+            .admission-box-custom {
+                padding: 30px 20px;
+            }
         }
 
         footer {
             margin-top: 50px;
         }
-
-        /* ✅ ONLY ADDED THIS FOR FULL WIDTH */
-        .full-footer {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-        }
     </style>
-
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-
     <nav class="navbar navbar-expand-lg navbar-dark custom-header">
-
         <div class="container">
-
             <a class="navbar-brand d-flex align-items-center" href="#">
-
                 <img src="images/lol-removebg-preview.png" height="45" class="rounded-circle me-2">
-
                 Benchmark International School
-
             </a>
-
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="menu">
-
                 <ul class="navbar-nav me-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
-
                         <ul class="dropdown-menu">
-
                             <li><a class="dropdown-item" href="li1.html">🚧 Under Development...</a></li>
-
-
                         </ul>
-
                     </li>
-
                 </ul>
-
                 <form class="d-flex">
                     <input class="form-control me-2" type="Search" placeholder="Search Here">
                     <button class="btn btn-outline-success">Search</button>
                 </form>
-
             </div>
-
         </div>
-
     </nav>
 
     <br>
 
-    <!-- SCHOOL BANNER -->
-
-    <center>
+    <div class="container-fluid text-center">
         <img src="images/mm-removebg-preview.png" class="img-fluid banner-img">
-    </center>
-
+    </div>
     <br>
-
-    <!-- IMAGE SLIDER -->
-    <center>
-        <img src="images/sliii-Picsart-AiImageEnhancer.jpg" height="20%" width="85%">
-    </center>
-
-    <!-- ABOUT SCHOOL -->
+    <div class="container text-center">
+        <img src="images/sliii-Picsart-AiImageEnhancer.jpg" width="85%" class="img-fluid rounded shadow-sm">
+    </div>
 
     <section class="container mt-5">
-
-        <div class="row align-items-center">
-
+        <div class="row align-items-center g-4">
             <div class="col-md-6">
-                <img src="images/lol.jpeg" class="img-fluid rounded">
+                <img src="images/lol.jpeg" class="img-fluid rounded shadow w-100">
             </div>
-
             <div class="col-md-6">
-
                 <h2 class="section-title">Welcome to Benchmark International School</h2>
-
-                <p>
-                    Benchmark International School is a modern educational institution
-                    located in Tongi, Gazipur. The school focuses on academic excellence,
-                    character building, and leadership development through quality education
-                    and innovative teaching methods.
-                </p>
-
+                <p>Benchmark International School is a modern educational institution located in Tongi, Gazipur. The
+                    school
+                    focuses on academic excellence, character building, and leadership development through quality
+                    education
+                    and innovative teaching methods.</p>
                 <a class="btn btn-primary" href="about.html">Read More</a>
-
             </div>
-
         </div>
-
     </section>
 
-    <!-- PRINCIPAL MESSAGE -->
-
-    <section class="bg-light mt-5 p-5">
-
+    <section class="bg-light mt-5 p-4 p-md-5">
         <div class="container">
-
             <h2 class="text-center section-title">Principal's Message</h2>
-
-            <div class="row align-items-center">
-
+            <div class="row align-items-center g-4">
                 <div class="col-md-4 text-center">
-                    <img src="images/prin.jpg" width="200" class="rounded-circle img-fluid">
+                    <img src="images/prin.jpg" width="220" class="rounded-circle img-fluid shadow">
                 </div>
-
-                <div class="col-md-8">
-
-                    <p>
-
-                        Education is not only about academic success but also about developing
-                        good character and responsible citizenship. At Benchmark International
-                        School we aim to inspire students to achieve their full potential.
-
-                    </p>
-
-                    <b>Md. Zahirul Islam</b><br>
-                    Principal,BIS
-
+                <div class="col-md-8 text-center text-md-start">
+                    <p class="fs-5"><i>"Education is not only about academic success but also about developing good
+                            character and responsible citizenship. At Benchmark International School we aim to inspire
+                            students to achieve their full potential."</i></p>
+                    <h5 class="fw-bold mb-0">Md. Zahirul Islam</h5>
+                    <span>Principal, BIS</span>
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-    <!-- WHY CHOOSE US -->
-
     <section class="container mt-5">
-
         <h2 class="text-center section-title">Why Choose Our School</h2>
-
-        <div class="row text-center">
-
-            <div class="col-md-3">
-
-                <div class="icon-box">
-
+        <div class="row text-center g-4">
+            <div class="col-sm-6 col-md-3">
+                <div class="icon-box h-100">
                     <i class="fa-solid fa-book fa-3x text-primary"></i>
-
                     <h5 class="mt-3">Quality Education</h5>
-
                     <p>Modern curriculum and effective teaching methods.</p>
-
                 </div>
-
             </div>
-
-            <div class="col-md-3">
-
-                <div class="icon-box">
-
+            <div class="col-sm-6 col-md-3">
+                <div class="icon-box h-100">
                     <i class="fa-solid fa-user-graduate fa-3x text-success"></i>
-
                     <h5 class="mt-3">Expert Teachers</h5>
-
                     <p>Highly qualified and experienced teachers.</p>
-
                 </div>
-
             </div>
-
-            <div class="col-md-3">
-
-                <div class="icon-box">
-
+            <div class="col-sm-6 col-md-3">
+                <div class="icon-box h-100">
                     <i class="fa-solid fa-school fa-3x text-danger"></i>
-
                     <h5 class="mt-3">Modern Campus</h5>
-
                     <p>Safe and comfortable learning environment.</p>
-
                 </div>
-
             </div>
-
-            <div class="col-md-3">
-
-                <div class="icon-box">
-
+            <div class="col-sm-6 col-md-3">
+                <div class="icon-box h-100">
                     <i class="fa-solid fa-trophy fa-3x text-warning"></i>
-
                     <h5 class="mt-3">Excellent Results</h5>
-
                     <p>Outstanding academic achievements.</p>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-    <!-- ADMISSION SECTION -->
+    <section class="container mt-5">
+        <div class="logo-card-container">
+            <img src="images/lol-removebg-preview-removebg-preview.png" class="img-fluid">
+        </div>
+        <div class="admission-box-custom">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h2 class="text-primary">
+                        <i class="fa-solid fa-graduation-cap"></i> Admission Open
+                    </h2>
+                    <p style="font-size:18px;" class="text-muted">
+                        Benchmark International School is now accepting applications for the new academic session. Join
+                        our institution to experience quality education, modern teaching methods, and a supportive
+                        learning environment.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+                    <a href="admission.html" class="btn btn-success btn-lg px-4">Apply for Admission</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="container mt-5">
-
-        <div class="row align-items-center">
-
-            <!-- LEFT SIDE -->
-
-            <div class="col-lg-6">
-                <img src="images/lol-removebg-preview-removebg-preview.png" class="img-fluid rounded shadow">
+        <h2 class="text-center section-title">Latest Notice</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0 text-center p-4">
+                    <div class="mb-3"><i class="fa-solid fa-bullhorn fa-3x text-danger"></i></div>
+                    <h4 class="text-primary">Notice Board</h4>
+                    <p class="text-muted mt-3" style="font-size:18px;">No notice yet. Please check again later for
+                        updates.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- ADMISSION CALL SECTION -->
-
-            <section class="container mt-5">
-                <div class="row align-items-center bg-light p-5 rounded shadow">
-                    <div class="col-lg-8">
-                        <h2 class="text-primary">
-                            <i class="fa-solid fa-user-graduate"></i>
-                            Admission Open
-                        </h2>
-
-                        <p style="font-size:18px;">
-                            Benchmark International School is now accepting applications for the
-                            new academic session. Join our institution to experience quality
-                            education, modern teaching methods, and a supportive learning
-                            environment.
-                        </p>
-
+    <section class="container mt-5">
+        <h2 class="text-center section-title">School Management</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 justify-content-center">
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm"><img src="images/prin.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h6>Md. Zahirul Islam</h6>
+                        <p class="small text-muted">(Principal)</p>
                     </div>
-
-                    <div class="col-lg-4 text-center">
-
-                        <a href="admission.html" class="btn btn-success btn-lg">
-                            Apply for Admission
-                        </a>
-
-                    </div>
-
                 </div>
-
-            </section>
-
-            <!-- LATEST NOTICE -->
-
-            <section class="container mt-5">
-
-                <h2 class="text-center section-title">Latest Notice</h2>
-
-                <div class="row justify-content-center">
-
-                    <div class="col-md-6">
-
-                        <div class="card shadow-lg border-0 text-center p-4">
-
-                            <div class="mb-3">
-
-                                <i class="fa-solid fa-bullhorn fa-3x text-danger"></i>
-
-                            </div>
-
-                            <h4 class="text-primary">Notice Board</h4>
-
-                            <p class="text-muted mt-3" style="font-size:18px;">
-
-                                No notice yet. Please check again later for updates.
-
-                            </p>
-
-                        </div>
-
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm"><img src="images/cha.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h6>Md. Zillur Rahman</h6>
+                        <p class="small text-muted">(Chairman)</p>
                     </div>
-
                 </div>
-
-            </section>
-
-            <!-- MANAGEMENT -->
-
-            <section class="container mt-5">
-
-                <h2 class="text-center section-title">School Management</h2>
-
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 justify-content-center">
-
-                    <div class="col">
-                        <div class="card h-100 text-center">
-                            <img src="images/prin.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h6>Md. Zahirul Islam</h6>
-                                <p>(Principal)</p>
-                            </div>
-                        </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm"><img src="images/chei.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h6>Md. Kamruzzaman Jhontu</h6>
+                        <p class="small text-muted">(CEO)</p>
                     </div>
-
-                    <div class="col">
-                        <div class="card h-100 text-center">
-                            <img src="images/cha.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h6>Md. Zillur Rahman</h6>
-                                <p>(Chairman)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card h-100 text-center">
-                            <img src="images/chei.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h6>Md. Kamruzzaman Jhontu</h6>
-                                <p>(CEO)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card h-100 text-center">
-                            <img src="images/vise.jpg" class="card-img-top">
-                            <div class="card-body">
-                                <h6>Sheikh Shamim Ashraf</h6>
-                                <p>(Vice Principal)</p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
-            </section>
-
-            <!-- FOOTER -->
-
-            <footer class="bg-dark text-center text-white" style="width:100%;">
-
-                <div class="container-fluid p-4">
-
-                    <a class="btn btn-outline-light btn-floating m-1"
-                        href="https://www.facebook.com/benchmarkinternationalschool">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-
-                    <a class="btn btn-outline-light btn-floating m-1" href="#">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-
-                    <a class="btn btn-outline-light btn-floating m-1" href="#">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-
-                    <a class="btn btn-outline-light btn-floating m-1" href="#">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-
+            </div>
+            <div class="col">
+                <div class="card h-100 text-center shadow-sm"><img src="images/vise.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h6>Sheikh Shamim Ashraf</h6>
+                        <p class="small text-muted">(Vice Principal)</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="text-center p-3" style="background:rgba(0,0,0,0.2);">
-
-                    © 2026 Copyright:
-                    <a href="index.html" class="text-white text-decoration-none">
-                        Benchmark-Intl.-School.com
-                    </a>
-
-                </div>
-
-            </footer>
+    <footer class="bg-dark text-center text-white">
+        <div class="container p-4">
+            <a class="btn btn-outline-light btn-floating m-1"
+                href="https://www.facebook.com/benchmarkinternationalschool"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#"><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="text-center p-3" style="background:rgba(0,0,0,0.2);">
+            © 2026 Copyright: <a href="index.html"
+                class="text-white text-decoration-none">Benchmark-Intl.-School.com</a>
+        </div>
+    </footer>
 
 </body>
 
