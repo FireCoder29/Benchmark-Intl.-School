@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
 <html>
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,87 +9,226 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="https://kit.fontawesome.com/5499e72b0a.js" crossorigin="anonymous"></script>
 
 <style>
-
-body{
+body {
     background-color: #d9e4f0;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    animation: fadePage 1s ease;
 }
 
-.hero{
-background-image: url("images/bbccd.avif");
-background-size:100% 100%;
-background-position:center;
-height:250px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-text-align:center;
+html {
+    scroll-behavior: smooth;
 }
 
-.hero h1{
-background: rgba(0,0,0,0.6);
-padding:20px;
-border-radius:10px;
+nav.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: slideDown 1s ease;
 }
 
-.section-title{
-text-align:center;
-margin-top:40px;
-margin-bottom:30px;
+.custom-header {
+    background: linear-gradient(90deg, #2c2e30, #222528, #414647);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
-.about-text{
-font-size:18px;
-text-align:justify;
+.navbar-brand {
+    font-weight: bold;
+    font-size: 22px;
 }
 
-
-.custom-header{
-background: linear-gradient(90deg,#2c2e30,#222528,#414647);
-box-shadow:0 3px 10px rgba(0,0,0,0.3);
+.hero {
+    background-color: #3a8797;
+    background-size: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    animation: fadeZoom 1.5s ease;
+    position: relative;
 }
 
-.navbar-brand{
-font-weight:bold;
-font-size:22px;
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
 }
 
-
-.custom-footer{
-background: linear-gradient(90deg,#2c2e30,#222528,#414647);
-color:white;
+.hero h1 {
+    position: relative;
+    z-index: 2;
+    background: rgba(0,0,0,0.5);
+    padding: 20px 30px;
+    border-radius: 12px;
+    animation: fadeUp 1.5s ease;
 }
 
-.custom-footer a{
-color:white;
-text-decoration:none;
+.section-title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    animation: fadeUp 1.2s ease;
 }
 
-.custom-footer a:hover{
-color:#00bfff;
+.about-text {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.8;
+    animation: fadeUp 1.4s ease;
 }
 
+/* Mission Vision Cards */
+.equal-card {
+    height: 100%;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    animation: fadeUp 1.2s ease;
+    height: 100%;
+}
+
+.card-body {
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.facility-box {
+    padding: 25px;
+    transition: 0.4s ease;
+    border-radius: 12px;
+    animation: fadeUp 1.3s ease;
+}
+
+.facility-box:hover {
+    background: white;
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-box {
+    animation: fadeZoom 1.3s ease;
+}
+
+.custom-footer {
+    background: linear-gradient(90deg, #2c2e30, #222528, #414647);
+    color: white;
+    margin-top: 50px;
+    animation: fadeIn 1.5s ease;
+}
+
+.custom-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.custom-footer a:hover {
+    color: #00bfff;
+}
+
+.btn-floating {
+    transition: 0.4s ease;
+}
+
+.btn-floating:hover {
+    transform: rotate(8deg) scale(1.1);
+}
+
+@keyframes fadePage {
+    from { opacity:0; }
+    to { opacity:1; }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@media(max-width:768px){
+    .hero {
+        height: 220px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+        padding: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 15px;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+
+    .card-body {
+        min-height: auto;
+    }
+}
 </style>
-
 </head>
 
 <body>
 
-
 <nav class="navbar navbar-expand-lg navbar-dark custom-header">
-
 <div class="container">
 
 <a class="navbar-brand d-flex align-items-center" href="index.html">
-
 <img src="images/lol-removebg-preview.png" class="rounded-circle me-2" height="45">
-
 Benchmark International School
-
 </a>
 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -99,7 +238,6 @@ Benchmark International School
 <div class="collapse navbar-collapse" id="menu">
 
 <ul class="navbar-nav me-auto mb-lg-0">
-
 <li class="nav-item">
 <a class="nav-link" href="index.html">Home</a>
 </li>
@@ -110,16 +248,10 @@ Benchmark International School
 
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">More</a>
-
 <ul class="dropdown-menu">
-
 <li><a class="dropdown-item" href="#">🚧 Under Development...</a></li>
-
-
 </ul>
-
 </li>
-
 </ul>
 
 <form class="d-flex">
@@ -128,141 +260,121 @@ Benchmark International School
 </form>
 
 </div>
-
 </div>
-
 </nav>
-
 
 <div class="hero">
 <h1>𝙰𝚋𝚘𝚞𝚝 𝙱𝚎𝚗𝚌𝚑𝚖𝚊𝚛𝚔 𝙸𝚗𝚝𝚎𝚛𝚗𝚊𝚝𝚒𝚘𝚗𝚊𝚕 𝚂𝚌𝚑𝚘𝚘𝚕</h1>
 </div>
 
-
 <div class="container">
-
 <h2 class="section-title text-primary"><b>About Our School</b></h2>
 
 <p class="about-text">
+<b>Benchmark International School (BIS)</b> is a modern educational institution located in Tongi, Gazipur,
+Bangladesh. Established in 2022, the school was founded with the goal of providing quality education and
+creating a learning environment where students can grow academically, socially, and morally.
 
-<b>Benchmark International School (BIS)</b> is a modern educational institution located in Tongi, Gazipur, Bangladesh.
-Established in 2022, the school was founded with the goal of providing quality education and creating a learning environment
-where students can grow academically, socially, and morally.
-
-The institution offers education from <b>Playgroup to Secondary School Certificate (SSC)</b> level. The school follows the <b>National Curriculum of Bangladesh</b> and provides instruction in both <b>Bangla and English mediums</b>.
+The institution offers education from <b>Playgroup to Secondary School Certificate (SSC)</b> level.
+The school follows the <b>National Curriculum of Bangladesh</b> and provides instruction in both
+<b>Bangla and English mediums</b>.
 
 Benchmark International School believes that education should not only focus on academic excellence but also on
 character building, creativity, leadership, and confidence. The school encourages students to participate in
 various extracurricular activities including cultural programs, sports, debates, and creative competitions.
-
 </p>
-
 </div>
 
-
 <div class="container">
-
 <h2 class="section-title text-danger"><b>Mission & Vision</b></h2>
 
-<div class="row">
+<div class="row g-4">
 
-<div class="col-md-6">
-
+<div class="col-md-6 equal-card">
 <div class="card shadow-lg">
 <div class="card-body">
-
 <h4 class="text-danger">Our Mission</h4>
-
 <p style="text-align:justify">
-
-Our mission is to provide a supportive and innovative learning environment where students can achieve academic
-excellence and develop strong moral values. We aim to nurture creativity, leadership skills, and critical
-thinking abilities so that students can successfully face the challenges of the modern world.
-
+Our mission is to provide a supportive and innovative learning environment where students
+can achieve academic excellence and develop strong moral values.
 </p>
-
 </div>
 </div>
-
 </div>
 
-<div class="col-md-6">
-
+<div class="col-md-6 equal-card">
 <div class="card shadow-lg">
 <div class="card-body">
-
 <h4 class="text-success">Our Vision</h4>
-
 <p style="text-align:justify">
-
-Our vision is to become one of the most respected educational institutions in Bangladesh by providing high-quality
-education, modern facilities, and dedicated teachers. We aspire to build responsible, knowledgeable, and confident
-future leaders who will contribute positively to society.
-
+Our vision is to become one of the most respected educational institutions in Bangladesh by
+providing high-quality education, modern facilities, and dedicated teachers.
 </p>
-
 </div>
 </div>
-
 </div>
 
 </div>
-
 </div>
-
 
 <div class="container">
-
 <h2 class="section-title text-primary"><b>School Facilities</b></h2>
 
 <div class="row text-center">
 
 <div class="col-md-3">
+<div class="facility-box">
 <i class="fas fa-book fa-3x text-primary"></i>
 <h5 class="mt-3">Modern Education</h5>
 <p>Activity-based learning and updated teaching methods.</p>
 </div>
+</div>
 
 <div class="col-md-3">
+<div class="facility-box">
 <i class="fas fa-chalkboard-teacher fa-3x text-danger"></i>
 <h5 class="mt-3">Qualified Teachers</h5>
 <p>Skilled and committed teachers.</p>
 </div>
+</div>
 
 <div class="col-md-3">
+<div class="facility-box">
 <i class="fas fa-futbol fa-3x text-success"></i>
 <h5 class="mt-3">Extracurricular Activities</h5>
 <p>Sports, cultural events, debates, and competitions.</p>
 </div>
+</div>
 
 <div class="col-md-3">
+<div class="facility-box">
 <i class="fas fa-snowflake fa-3x text-info"></i>
 <h5 class="mt-3">Air Conditioned Classrooms</h5>
-<p>Comfortable air-conditioned classrooms for a better learning environment.</p>
+<p>Comfortable classrooms for better learning environment.</p>
+</div>
 </div>
 
 </div>
-
 </div>
 
+<!-- Gallery -->
+<div class="container gallery-box">
 <br><br>
-
-<!-- Added Photo Gallery section for future use. Currently, no photos have been added. --> 
 <h2 class="text-center mb-3 bg-dark p-3 rounded-3 text-white">Photo Gallery</h2>
 <br>
 <center>
-    <h3 style="color: #880311;">No Photos added yet...</h3> 
+<h3 style="color: #880311;">No Photos added yet...</h3>
 </center>
 <br>
+</div>
 
-<!-- Added Footer? -->
+<!-- Footer -->
 <footer class="custom-footer text-center">
-
 <div class="container p-4">
-
 <section class="mb-4">
 
-<a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/benchmarkinternationalschool">
+<a class="btn btn-outline-light btn-floating m-1"
+href="https://www.facebook.com/benchmarkinternationalschool">
 <i class="fab fa-facebook-f"></i>
 </a>
 
@@ -279,13 +391,11 @@ future leaders who will contribute positively to society.
 </a>
 
 </section>
-
 </div>
 
 <div class="text-center p-3" style="background-color: rgba(0,0,0,0.2);">
-
-© 2026 Copyright: <a href="index.html">BenchmarkIntlSchool.com</a>
-
+© 2026 Copyright:
+<a href="index.html">BenchmarkIntlSchool.com</a>
 </div>
 
 </footer>
